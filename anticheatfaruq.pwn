@@ -1,3 +1,4 @@
+// Script by Aiura
 #include <a_samp>
 
 #define 	WHITE 				0xFFFFFFFF
