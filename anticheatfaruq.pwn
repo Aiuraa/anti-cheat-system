@@ -1,179 +1,76 @@
 // Script by Aiura
-#include <a_samp>
+// Script by Nextjacks_
+// Script by Anticheatfaruq.amx
 
-#define 	WHITE 				0xFFFFFFFF
-#define     GREY                0xAFAFAFFF
+#include <pawnesia>
 
-public OnFilterScriptInit()
+// Warna
+#define     WARNA_PUTIH     0xFFFFFFAA
+#define     WARNA_ABUABU    0xAFAFAFAA
+
+// Macro
+#define KickPemain(%1) (_:KCKPM0:KCKPM1:MACROBYAIURA__(%1))
+#define KCKPM0:KCKPM1:MACROBYAIURA__(%1,%2) SetTimerEx("OnPlayerKicked",%2,false,"i",%1)
+#define KCKPM1:MACROBYAIURA__(%1) SetTimerEx("OnPlayerKicked",100,false,"i",%1)
+
+// Event Callback
+publik OnFilterScriptInit()
 {
-	return 1;
+    print("\n\n----------------------------------------");
+    print("   Anticit by Aiura Faruq Nextjacks_    ");
+    print("----------------------------------------");
+    print("   Antichit ini akan melindungi anda    ");
+    print("   dari serangan DDoS dan juga bypass   ");
+    print("  yang membuat server anda kebal hukum  ");
+    print("----------------------------------------\n");
+    kembalikan 1;
 }
 
-public OnFilterScriptExit()
+publik OnPlayerKicked(playerid)
 {
-	return 1;
+    kembalikan Kick(playerid);
 }
 
-forward KickPlayer(playerid);
-public KickPlayer(playerid)
+publik OnPlayerUpdate(playerid)
 {
-    SetTimerEx("KickUser", 1000, 0, "i", playerid);
-}
-
-forward KickUser(playerid);
-public KickUser(playerid)
-{
-	Kick(playerid);
-}
-
-public OnPlayerUpdate(playerid)
-{
-    if(GetPlayerScore(playerid) < 4)//artinya kalau level dibawah 4 bakalan ke kick terkena anti cheat weapon hack
- 	{
-		if(GetPlayerWeapon(playerid) == 25)//id 25 sama dengan senjata shotgun
-		{
-			new string[168];
-			new gunID = GetPlayerWeapon(playerid);
-			RemovePlayerWeapon(playerid, gunID);
-		    format(string,sizeof(string), "{B0C4DE}FARUQBOT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PlayerIrwanIbrahim(playerid));
-		    SendClientMessageToAll(WHITE, string);
-		    KickPlayer(playerid);
-		}
-        if(GetPlayerWeapon(playerid) == 38)//id 38 sama dengan senjata minigun
-		{
-			new string[168];
-			new gunID = GetPlayerWeapon(playerid);
-			RemovePlayerWeapon(playerid, gunID);
-		    format(string,sizeof(string), "{B0C4DE}FARUQBOT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PlayerIrwanIbrahim(playerid));
-		    SendClientMessageToAll(WHITE, string);
-		    KickPlayer(playerid);
-		}
-	       if(GetPlayerWeapon(playerid) == 24)//id 24 sama dengan senjata desert
-		{
-			new string[168];
-			new gunID = GetPlayerWeapon(playerid);
-			RemovePlayerWeapon(playerid, gunID);
-		    format(string,sizeof(string), "{B0C4DE}FARUQBOT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PlayerIrwanIbrahim(playerid));
-		    SendClientMessageToAll(WHITE, string);
-		    KickPlayer(playerid);
-		}
-			if(GetPlayerWeapon(playerid) == 16)//id 16 sama dengan senjata Bom
-		{
-			new string[168];
-			new gunID = GetPlayerWeapon(playerid);
-			RemovePlayerWeapon(playerid, gunID);
-		    format(string,sizeof(string), "{B0C4DE}FARUQBOT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PlayerIrwanIbrahim(playerid));
-		    SendClientMessageToAll(WHITE, string);
-		    KickPlayer(playerid);
-		}
-			if(GetPlayerWeapon(playerid) == 35)//id 35 sama dengan senjata Basoka
-		{
-			new string[168];
-			new gunID = GetPlayerWeapon(playerid);
-			RemovePlayerWeapon(playerid, gunID);
-		    format(string,sizeof(string), "{B0C4DE}FARUQBOT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PlayerIrwanIbrahim(playerid));
-		    SendClientMessageToAll(WHITE, string);
-		    KickPlayer(playerid);
-		}
-			if(GetPlayerWeapon(playerid) == 31)//id 31 sama dengan senjata M4
-		{
-			new string[168];
-			new gunID = GetPlayerWeapon(playerid);
-			RemovePlayerWeapon(playerid, gunID);
-		    format(string,sizeof(string), "{B0C4DE}FARUQBOT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PlayerIrwanIbrahim(playerid));
-		    SendClientMessageToAll(WHITE, string);
-		    KickPlayer(playerid);
-		}
-			if(GetPlayerWeapon(playerid) == 30)//id 30 sama dengan senjata AK
-		{
-			new string[168];
-			new gunID = GetPlayerWeapon(playerid);
-			RemovePlayerWeapon(playerid, gunID);
-		    format(string,sizeof(string), "{B0C4DE}FARUQBOT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PlayerIrwanIbrahim(playerid));
-		    SendClientMessageToAll(WHITE, string);
-		    KickPlayer(playerid);
-		}
-			if(GetPlayerWeapon(playerid) == 29)//id 29 sama dengan senjata Mp5
-		{
-			new string[168];
-			new gunID = GetPlayerWeapon(playerid);
-			RemovePlayerWeapon(playerid, gunID);
-		    format(string,sizeof(string), "{B0C4DE}FARUQBOT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PlayerIrwanIbrahim(playerid));
-		    SendClientMessageToAll(WHITE, string);
-		    KickPlayer(playerid);
-		}
-			if(GetPlayerWeapon(playerid) == 26)//id 26 sama dengan senjata Sg2
-		{
-			new string[168];
-			new gunID = GetPlayerWeapon(playerid);
-			RemovePlayerWeapon(playerid, gunID);
-		    format(string,sizeof(string), "{B0C4DE}FARUQBOT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PlayerIrwanIbrahim(playerid));
-		    SendClientMessageToAll(WHITE, string);
-		    KickPlayer(playerid);
-		}
-			if(GetPlayerWeapon(playerid) == 37)//id 37 sama dengan senjata Api
-		{
-			new string[168];
-			new gunID = GetPlayerWeapon(playerid);
-			RemovePlayerWeapon(playerid, gunID);
-		    format(string,sizeof(string), "{B0C4DE}FARUQBOT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PlayerIrwanIbrahim(playerid));
-		    SendClientMessageToAll(WHITE, string);
-		    KickPlayer(playerid);
-		}
-			if(GetPlayerWeapon(playerid) == 34)//id 34 sama dengan senjata Snipper
-		{
-			new string[168];
-			new gunID = GetPlayerWeapon(playerid);
-			RemovePlayerWeapon(playerid, gunID);
-		    format(string,sizeof(string), "{B0C4DE}FARUQBOT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PlayerIrwanIbrahim(playerid));
-		    SendClientMessageToAll(WHITE, string);
-		    KickPlayer(playerid);
-		}
-			if(GetPlayerWeapon(playerid) == 27)//id 27 sama dengan senjata Spash12
-		{
-			new string[168];
-			new gunID = GetPlayerWeapon(playerid);
-			RemovePlayerWeapon(playerid, gunID);
-		    format(string,sizeof(string), "{B0C4DE}FARUQBOT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PlayerIrwanIbrahim(playerid));
-		    SendClientMessageToAll(WHITE, string);
-		    KickPlayer(playerid);
-		}
-			if(GetPlayerWeapon(playerid) == 28)//id 28 sama dengan senjata MicroUzi
-		{
-			new string[168];
-			new gunID = GetPlayerWeapon(playerid);
-			RemovePlayerWeapon(playerid, gunID);
-		    format(string,sizeof(string), "{B0C4DE}FARUQBOT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PlayerIrwanIbrahim(playerid));
-		    SendClientMessageToAll(WHITE, string);
-		    KickPlayer(playerid);
-		}
-	 }
-    /*if(PlayerInfo[playerid][AdminLevel] == 0)//ini adalah variable yang mengget varibale player apa bila bukan admin dia akan terkena kick weapon hack
-	{
-        if(GetPlayerWeapon(playerid) == 38)
-		{
-		    new string[168];
-			new gunID = GetPlayerWeapon(playerid);
-			RemovePlayerWeapon(playerid, gunID);
-		    format(string,sizeof(string), "{B0C4DE}FARUQBOT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PlayerIrwanIbrahim(playerid));
-		    SendClientMessageToAll(WHITE, string);
-		    KickPlayer(playerid);
-		}
-	}*/
-	return 1;
-}
-
-stock PlayerIrwanIbrahim(playerid)
-{
-    new name[MAX_PLAYER_NAME];
-    GetPlayerName(playerid,name,sizeof(name));
-    for(new i = 0; i < MAX_PLAYER_NAME; i++)
+    jika (PemainLevel(playerid) >= 4)
+        kembalikan 1;
+    
+    pilih (GetPlayerWeapon(playerid))
     {
-        if(name[i] == '_') name[i] = ' ';
+        pilihan 16, 24..31, 34, 35, 37, 38:
+        {
+            variabel stringFarough[10 * 10 + 24];
+            format(stringFarough, sizeof(stringFarough), "{B0C4DE}ANTICHIT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PemainIrwanIbrahim(playerid));
+            KirimPesanKePemain(playerid, WARNA_PUTIH, stringFarough);
+        }
     }
-    return name;
+    kembalikan 1;
 }
 
+// Fungsi
+PemainIrwanIbrahim(playerid)
+{
+    new playerName[MAX_PLAYER_NAME + 1];
+    GetPlayerName(playerid, playerName, sizeof(playerName));
+
+    new cur = strfind(playerName, "_");
+    
+    if (cur != -1)
+    {
+        playerName[cur] = ' ';
+    }
+    kembalikan playerName;
+}
+
+// Gunakan open.mp atau fixes.inc jika masih pakai samp!
+RemovePlayerWeapon(playerid, weaponid)
+{
+    kembalikan SetPlayerAmmo(playerid, weaponid, 0);
+}
+
+// Atau gunakan yang ini, terserah
+/*
 stock RemovePlayerWeapon(playerid, weaponid) //Credits to Hreesang & leapfish untuk membantu saya membuat stock ini
 {
 	new plyWeapons[12];
@@ -193,3 +90,8 @@ stock RemovePlayerWeapon(playerid, weaponid) //Credits to Hreesang & leapfish un
 	    GivePlayerWeapon(playerid, plyWeapons[slot], plyAmmo[slot]);
 	}
 }
+*/
+
+#if 0
+	Hayo mau ngapain? :P
+#endif
