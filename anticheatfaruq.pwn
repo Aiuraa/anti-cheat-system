@@ -2,6 +2,10 @@
 // Script by Nextjacks_
 // Script by Anticheatfaruq.amx
 
+// Mengubah warning menjadi error
+// HIDUP ITU HARUS KERAS BOS!
+#pragma option -E
+
 #include <pawnesia>
 
 // Warna
@@ -34,8 +38,10 @@ publik OnPlayerKicked(playerid)
 publik OnPlayerUpdate(playerid)
 {
     jika (PemainLevel(playerid) >= 4)
+    {
         kembalikan 1;
-    
+    }
+
     pilih (GetPlayerWeapon(playerid))
     {
         pilihan 16, 24..31, 34, 35, 37, 38:
