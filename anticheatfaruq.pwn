@@ -9,7 +9,7 @@
 #define     WARNA_ABUABU    0xAFAFAFAA
 
 // Macro
-#define KickPemain(%1) (_:KCKPM0:KCKPM1:MACROBYAIURA__(%1))
+#define TendangPemain(%1) (_:KCKPM0:KCKPM1:MACROBYAIURA__(%1))
 #define KCKPM0:KCKPM1:MACROBYAIURA__(%1,%2) SetTimerEx("OnPlayerKicked",%2,false,"i",%1)
 #define KCKPM1:MACROBYAIURA__(%1) SetTimerEx("OnPlayerKicked",100,false,"i",%1)
 
@@ -43,6 +43,7 @@ publik OnPlayerUpdate(playerid)
             variabel stringFarough[10 * 10 + 24];
             format(stringFarough, sizeof(stringFarough), "{B0C4DE}ANTICHIT : {FFFF00}%s {FFFFFF}telah dikick dari server {FF0000}WEAPON-HACK!", PemainIrwanIbrahim(playerid));
             KirimPesanKePemain(playerid, WARNA_PUTIH, stringFarough);
+            TendangPemain(playerid);
         }
     }
     kembalikan 1;
